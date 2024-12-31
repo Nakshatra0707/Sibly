@@ -2,12 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { SafeAreaView, TextInput, TouchableOpacity, Text, StyleSheet, ScrollView, View, ActivityIndicator, KeyboardAvoidingView, Platform } from 'react-native';
 import { createCompletion } from './openaiService';
 
-const systemMessage = {
-  role: 'system',
-  content: 'You will be provided with a message, and your task is to respond like a sibling.',
-};
-
 const ChatSibly = () => {
+  const name = ""; // Firebase code 
+  const qualities = [] // Firebase code
+  const systemMessage = {
+    role: 'system',
+    content: `You are supposed to act like an elder sibling to a teenager who will be messaging you. You have to help them with their mental health or social issues. Help them feel better. You will have the following qualities: ${qualities}. Your name is ${name}. Your job is solely to help the user and do not answer any questions or solve problems that are not related to their life. If such a problem is asked just say that you are unable to answer and prompt them to ask something else in a comforting manner. Always be gentle and approachable, provide a comfortable environment. Always be brief. This application is not meant for problem-solving with just rational solutions. It must be very conversational. `,
+  };
   const [messages, setMessages] = useState([systemMessage]);
   const [input, setInput] = useState('');
   const [loading, setLoading] = useState(false);

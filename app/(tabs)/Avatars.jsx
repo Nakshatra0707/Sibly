@@ -37,7 +37,7 @@ const Avatars = () => {
                 <Text style = {{padding:25}}>Listening Avatar</Text>   
             </TouchableOpacity>
 
-            <TouchableOpacity style = {styles.button} onpress = {createAvatar}>
+            <TouchableOpacity style = {styles.button} onPress = {createAvatar}>
                 <Text>Create Avatar</Text>
             </TouchableOpacity>
         </View>

@@ -31,7 +31,7 @@ export default function Home() {
     }
   };
 
-  const handleCreateSibly = () => {
+  const Avatars = () => {
     // Navigate to the Create Sibly screen
     navigation.navigate('Avatars');
   };
@@ -40,8 +40,8 @@ export default function Home() {
     <View style={styles.container}>
       <Text style={styles.title}>Welcome to Sibly!</Text>
       <Text style={styles.greeting}>Hello, {userName}!</Text>
-      <TouchableOpacity style={styles.createButton} onPress={handleCreateSibly}>
-        <Text style={styles.buttonText}>Chat with Sibly</Text>
+      <TouchableOpacity style={styles.createButton} onPress={Avatars}>
+        <Text style={styles.buttonText}>Go to Avatars</Text>
       </TouchableOpacity>
       <TouchableOpacity style={styles.button} onPress={handleLogout}>
         <Text style={styles.buttonText}>Log Out</Text>

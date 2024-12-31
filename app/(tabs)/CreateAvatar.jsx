@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, ScrollView, TouchableOpacity, StyleSheet } from 'react-native';
-import { FlatList } from 'react-native-web';
+import { FlatList } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 const CreateAvatar = () => {

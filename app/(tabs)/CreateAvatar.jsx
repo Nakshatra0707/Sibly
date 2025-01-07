@@ -83,6 +83,11 @@ const CreateAvatar = () => {
                         </View>
                     )}
 
+                    <Text>Which Avatar do you want to replace?</Text>
+                    <TouchableOpacity>
+                        <TextInput placeholder="Enter avatar 1, 2 or 3"/>
+                    </TouchableOpacity>
+
                     <TouchableOpacity style={styles.submitButton} onPress={submit}>
                         <Text style={styles.submitButtonText}>Submit</Text>
                     </TouchableOpacity>

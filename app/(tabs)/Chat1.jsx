@@ -3,7 +3,7 @@ import { SafeAreaView, TextInput, TouchableOpacity, Text, StyleSheet, ScrollView
 import { createCompletion } from './openaiService';
 
 const ChatSibly = () => {
-  const name = ""; // Firebase code 
+  const name = ""; // extract from Firebase --> avatar1
   const qualities = [] // Firebase code
   const systemMessage = {
     role: 'system',

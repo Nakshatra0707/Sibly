@@ -1,19 +1,23 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import { auth } from '../../config/firebase';
+import { auth, db } from '../../config/firebase';
 import { useNavigation } from '@react-navigation/native';
+import {doc, setDoc} from 'firebase/firestore'
 
 export default function SignUp() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
-
   const navigation = useNavigation();
 
   const handleSignUp = async () => {
     try {
-      await createUserWithEmailAndPassword(auth, email, password);
+      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      const userId = userCredential.user.uid;
+
+      const userDocRef = doc(db, 'users', userId)
+      
       navigation.navigate('Home');
     } catch (error) {
       setError(error.message);
